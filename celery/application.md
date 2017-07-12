@@ -180,5 +180,75 @@ app.config_from_object(Config)
 
 ## config_from_envvar
 
+config_from_envvar()从环境变量获取配置模块的名字。
+
+例如，从一个指定的环境变量 CELERY_CONFIG_MODULE 加载配置模块。
+
+```
+import os
+from celery import Celery
+
+#: Set default configuration module name
+os.environ.setdefault('CELERY_CONFIG_MODULE', 'celeryconfig')
+
+app = Celery()
+app.config_from_envvar('CELERY_CONFIG_MODULE')
+```
+
+然后你就可以通过环境变量指定配置模块:
+
+```
+$CELERY_CONFIG_MODULE="celeryconfig.prod" celery worker -l info
+```
+
+## Censored configuration经过检查的配置
+
+如果你想打印配置，当作调试信息，你可能想过滤出敏感信息，诸如密码，API的密钥（key）。这里，Celery有一些工具可以展示配置信息，其中一个就是[humanize()](http://docs.celeryproject.org/en/latest/reference/celery.app.utils.html#celery.app.utils.Settings.humanize)。
+
+```
+>>> app.conf.humanize(with_defaults=False, censored=True)
+```
+
+这个方法将配置信息返回为字符串列表，虽然仅包含对默认配置做出的修改，但是你可以使能 `with_defaults` 参数将内建的默认键值对包含进来。
+
+If you instead want to work with the configuration as a dictionary, you can use the `table()` method:
+
+```
+>>> app.conf.table(with_defaults=False, censored=True)
+```
+
+注意：Celery不会移除所有敏感的信息。Celery是使用正则表达式去搜寻key的名字，如果添加包含敏感信息的自定义设置，则应使用芹菜标识为secret的名称命名key。
+
+包含如下子字符串的设置会被检查：
+
+`API, TOKEN, KEY, SECRET, PASS, SIGNATURE, DATABASE`
+
+[Laziness](http://docs.celeryproject.org/en/latest/userguide/application.html#laziness)
+
+application instance is lazy， 如果不是需要，不会被计算（evaluated）。
+
+创建一个Celery实例只会做如下动作：
+
+1. 创建一个逻辑的clock instance， 被所有event使用。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
