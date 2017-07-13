@@ -177,6 +177,8 @@ packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
 install_requires应该指定项目需要哪些依赖才能正常运行。 当项目被pip安装时， 这个设置可以帮助安装依赖包。
 
+>设置这个之后，当你`pip install sample`时，安装包时会自动下载上述依赖包peppercorn。
+
 更多信息： [install_requires vs Requirements files](https://packaging.python.org/discussions/install-requires-vs-requirements/#install-requires-vs-requirements-files).
 
 #### python_requires
@@ -214,7 +216,11 @@ package_data={
 
 `data_files=[('my_data', ['data/data_file'])],`
 
-虽然配置package_data满足大多数需求，在某些情况下，您可能需要将数据文件你包外。data_files指令允许你这样做。
+虽然配置package_data满足大多数需求，在某些情况下，您可能需要将数据文件放在你项目包外的外边。data_files指令允许你这样做。
+
+```
+
+```
 
 #### scripts
 
@@ -248,15 +254,53 @@ entry_points={
 
 ## Working in "Development Mode"
 
+虽然并不必须，你可以在editable或develop模式下安装你的项目。一边编辑一边安装。
+
+假设你现在在项目的根目录，执行：
+
+`pip install -e .`
+
+-e 表示 --editable, `.`表示当前目录。 此处的命令代表在可编辑模式下安装当前目录的项目。 
+
+此时也会安装任何一个定义在“install_requires” 中的依赖包和 任何一个定义在 “console_scripts”中的脚本。 依赖包的安装不可编辑修改。
+
+通常你又想在安装依赖的包的时候也可以编辑，例如，你的项目需要“foo” 和 “bar”， but you want “bar” installed from vcs（版本控制系统） in editable mode,你可以这么做：
+
+```
+-e .
+-e git+https://somerepo/bar.git#egg=bar
+```
+
+第一行表示安装你的项目和任何一个依赖，第二行覆盖安装“bar”依赖，这样可以从版本控制系统满足安装要求，而不是从PyPI。
+
+如果，你想可编辑的从本地安装“bar”，这么做： 
+
+```
+-e /path/to/project/bar
+-e .
+```
+
+除此之外，依赖包会从PyPI满足，due to the installation order of the requirements file. For more on requirements files, see the Requirements File section in the pip docs. For more on vcs installs, see the VCS Support section of the pip docs.
+
+Lastly, if you don’t want to install any dependencies at all, you can run:
+
+```
+pip install -e . --no-deps
+```
+
+For more information, see the Development Mode section of the setuptools docs.
+
 ## [Packaging your Project](https://packaging.python.org/tutorials/distributing-packages/#console-scripts)
 
 ### Source Distribuytions
 
-配置好之后，在项目的根目录执行：
+最低限度，你应该创建一个源码包[Source Distribution](https://packaging.python.org/glossary/#term-source-distribution-or-sdist)：
 
 ```
 python setup.py sdist
 ```
+
+源码包就是未编译构建的（非 [Built Distribution](https://packaging.python.org/glossary/#term-built-distribution)）， 在pip安装的时候需要一个build步骤。 即使发布是纯粹的python源码，仍然需要一个build步骤去从`setup.py`生成安装的元数据（installation metadata）.
 
 ### Wheels
 
@@ -274,8 +318,27 @@ Before you can build wheels for your project, you’ll need to install the wheel
 
 #### Universal Wheels
 
+`python setup.py bdist_wheel --universal`
 
+You can also permanently set the --universal flag in “setup.cfg” (e.g., see sampleproject/setup.cfg)
+
+[bdist_wheel]
+universal=1
+Only use the `--universal setting`, if:
+
+Your project runs on Python 2 and 3 with no changes (i.e. it does not require [2to3](https://docs.python.org/2/library/2to3.html)).
+Your project does not have any C extensions.
+Beware that bdist_wheel does not currently have any checks to warn if you use the setting inappropriately.
+
+**If your project has optional C extensions, it is recommended not to publish a universal wheel**, because pip will prefer the wheel over a source installation, and prevent the possibility of building the extension.
 
 #### Pure Python Wheels
 
-#### Pure Python Wheels
+`python setup.py bdist_wheel`
+
+bdist_wheel will detect that the code is pure Python, and build a wheel that’s named such that it’s usable on any Python installation with the same major version (Python 2 or Python 3) as the version you used to build the wheel. For details on the naming of wheel files, see PEP 425
+
+If your code supports both Python 2 and 3, but with different code (e.g., you use “2to3”) you can run setup.py bdist_wheel twice, once with Python 2 and once with Python 3. This will produce wheels for each version.
+
+#### Platform Wheels
+
