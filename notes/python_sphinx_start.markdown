@@ -17,6 +17,7 @@
 
 `sphinx-quickstart`
 
+中文支持： zh_CN
 
 完毕之后的目录结构：
 
@@ -92,4 +93,8 @@ Sphinx的一个主要的目标就是将一个域内的对象合理的文档化�
 
 * Python installed.
 * pip install sphinx
-* How to make? -->  cd to your proj_dir , then `./make.bat html`. 
+* How to make? 
+  
+  if PowerShell  cd to your proj_dir , then `./make.bat html`. 
+  
+  if cmd, `make.bat html`
