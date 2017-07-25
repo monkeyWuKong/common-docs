@@ -36,3 +36,37 @@ $ git config user.name
 
 ...
 
+
+## git 与 svn 的差异
+
+## 日常常用命令
+
+[Git-基础-记录每次更新到仓库](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93)
+
+**检查当前文件状态**
+
+`git status`
+
+`git status -s`
+
+**跟踪新文件**
+
+`git add README`
+
+**提交更新**
+
+`git commit`
+
+**移动文件**
+
+`git mv file_from file_to`
+
+相当于：
+
+```
+$ mv README.md README
+$ git rm README.md
+$ git add README
+```
+
+>以前只是了解，现在真正用的时候发现，git易用性真的不如svn，工具就是应该简单，不应该在工具上花太多时间。
