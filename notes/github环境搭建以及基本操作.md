@@ -70,3 +70,29 @@ $ git add README
 ```
 
 >以前只是了解，现在真正用的时候发现，git易用性真的不如svn，工具就是应该简单，不应该在工具上花太多时间。
+
+## 同步远程主线到本地分支
+
+查看远程分支
+
+`git remote -v`
+
+添加远程分支
+
+`git remote add remmote-name http://gitlab.jkl/xyz/abc.git`
+
+remote-name可以自定义
+
+拉取远程分支
+
+`git fetch remmote-name`
+
+同步代码
+
+` git merge remmote-name/master`
+
+提交
+
+`git push`
+
+
