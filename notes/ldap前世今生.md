@@ -22,3 +22,18 @@ Administrators have the ability to configure NIS to serve password data to outsi
 
 随着时间推移，LDAP（轻量级目录访问协议）出现。
 
+
+
+## NSS -- Name Service Switch
+
+
+## [nss-pam-ldapd](https://arthurdejong.org/nss-pam-ldapd/)
+
+nss-pam-ldapd, 提供了一个 Name Service Switch (NSS, nsswitch) 模块。
+
+让你的LDAP server提供 user account, group, host name, alias, netgroup, 或者其他你需要从/etc flat files 或者 NIS经常查询的信息。
+
+它还提供了一个可插拔的身份验证模块（PAM： Pluggable Authentication Module），用UNIX系统上的LDAP服务器进行身份验证和身份验证管理。
+
+This is implemented using thin **NSS** and **PAM** modules
+which delegate to a dedicated service (nslcd) that queries the LDAP server with persistent connections, authentication, attribute translation, etc.

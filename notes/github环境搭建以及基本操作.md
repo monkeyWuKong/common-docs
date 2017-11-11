@@ -1,8 +1,8 @@
-#GitHub
+# GitHub
 
-##设置git
+## 设置git
 
-###设置用户名
+### 设置用户名
 [Setting your username in Git](https://help.github.com/articles/setting-your-username-in-git/#platform-linux)
 
 用户名与你的github账号是不一样的，你随时可以更改。用户名在今后的push记录中会出现。对于以前的push记录，显示的会是老的用户名。
@@ -30,12 +30,35 @@ $ git config user.name
 > Mona Lisa
 ```
 
-###设置邮件地址
+### 设置邮件地址
 
 [Setting your email in Git](https://help.github.com/articles/setting-your-email-in-git/)
 
-...
+```bash
+git config --global user.email "email@example.com"
+#check
+git config --global user.email
+```
 
+### 生成新的 SSH key 并 加入到 ssh-agent
+
+```bash
+#Generating a new SSH key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+### 开始使用
+
+#### [fork](https://help.github.com/articles/fork-a-repo/)
+
+A fork is a copy of a repository. 
+
+```bash
+#Create a local clone of your fork
+git clone https://github.com/YOUR-USERNAME/Spoon-Knife
+
+git remote -v
+```
 
 ## git 与 svn 的差异
 
@@ -95,4 +118,21 @@ remote-name可以自定义
 
 `git push`
 
+## 分支操作
 
+创建分支
+
+`git branch testing`
+
+切换当前工作分支
+
+```
+git checkout testing
+git checkout master
+```
+
+查看历史
+
+```
+git log --oneline --decorate --graph --all
+```

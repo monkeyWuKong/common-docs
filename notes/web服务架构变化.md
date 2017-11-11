@@ -16,6 +16,8 @@ webService三要素:
 
 soap用来传递信息的格式, WSDL 用来描述如何访问具体的接口, UDDI用来管理,分发,查询.
 
+[WebService到底是什么](http://blog.csdn.net/wooshn/article/details/8069087/)
+
 [百科-Web Service](http://baike.sogou.com/v598444.htm?fromTitle=webservice)
 
 ### SOA架构
