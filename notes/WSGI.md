@@ -4,7 +4,7 @@
 
 > “和CGI类似，都是定义web服务器与web应用之间的简单接口规范。”
 
-最初是由Phillip J定义于**[PEP 333](https://www.python.org/dev/peps/pep-0333/)**中，发布于**2003年12月7号日**。
+最初是由Phillip J定义于[PEP 333](https://www.python.org/dev/peps/pep-0333/)中，发布于**2003年12月7号日**。
 
 现在已经被采纳为python web 应用开发的一个标准。最新版为[PEP 3333](https://www.python.org/dev/peps/pep-3333/), V1.0.1,发布于**2010年9月26日**。
 
