@@ -1,6 +1,6 @@
 # [python multiprocessing](https://docs.python.org/2/library/multiprocessing.html#module-multiprocessing)
 
-## poll的基本用法
+## pool的基本用法
 
 ```python
 from multiprocessing import Pool
