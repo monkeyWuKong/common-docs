@@ -35,3 +35,6 @@ github： https://github.com/scrooloose/nerdtree
 ```
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 ```
+
+### 一键配置参考
+https://github.com/chxuan/vimplus
