@@ -1,22 +1,22 @@
 
-### centos7 Éı¼¶vim8
+### centos7 å‡çº§vim8
 
 ```
 yum remove vim -y
-yum install ncurses-devel -y
+yum install ncurses-devel python-devel -y
 git clone https://github.com/vim/vim.git
 cd vim/src
 
-´ò¿ªMakefile
+æ‰“å¼€Makefile
 CONF_OPT_PYTHON = --enable-pythoninterp
 
 make
 make install
-#ÉèÖÃ»·¾³±äÁ¿£¬´ò¿ª`/etc/profile`,×îºóÒ»ĞĞĞ´Èë
+#è®¾ç½®ç¯å¢ƒå˜é‡ï¼Œæ‰“å¼€`/etc/profile`,æœ€åä¸€è¡Œå†™å…¥
 PATH=$PATH:/usr/local/bin/
 ```
 
-Èç¹ûÖ®Ç°Ã»ÓĞpythonÖ§³Ö£¬Ôö¼ÓpythonÖ§³Ö£¬ÔòĞèÒªÖØĞÂ±àÒë
+å¦‚æœä¹‹å‰æ²¡æœ‰pythonæ”¯æŒï¼Œå¢åŠ pythonæ”¯æŒï¼Œåˆ™éœ€è¦é‡æ–°ç¼–è¯‘
 
 ```
 cd vim/src
@@ -26,11 +26,11 @@ make
 make install
 ```
 
-### °²×°ÎÄ¼şä¯ÀÀÆ÷nerdtree
+### å®‰è£…æ–‡ä»¶æµè§ˆå™¨nerdtree
 
-²å¼ş¹ÙÍø£º http://www.vim.org/scripts/script.php?script_id=1658
+æ’ä»¶å®˜ç½‘ï¼š http://www.vim.org/scripts/script.php?script_id=1658
 
-github£º https://github.com/scrooloose/nerdtree
+githubï¼š https://github.com/scrooloose/nerdtree
 
 ```
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
