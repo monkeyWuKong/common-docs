@@ -34,6 +34,9 @@ https://github.com/VundleVim/Vundle.vim
 
 ```
 set nocompatible              " be iMproved, required
+
+set backspace=indent,eol,start
+
 filetype off                  " required
 
 syntax enable
