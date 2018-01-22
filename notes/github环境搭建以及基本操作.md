@@ -135,8 +135,17 @@ git checkout testing
 git checkout master
 ```
 
-查看历史
+## 查看历史
 
 ```
 git log --oneline --decorate --graph --all
 ```
+
+**查看最新一次的简略历史**
+
+`git log -n 1 --stat`
+
+**查看最新一次提交的文件差异**
+
+`git log -p -2`
+
