@@ -98,6 +98,16 @@ $ git add README
 
 >以前只是了解，现在真正用的时候发现，git易用性真的不如svn，工具就是应该简单，不应该在工具上花太多时间。
 
+## 撤销
+
+**你提交后发现忘记了暂存某些需要的修改，可以像下面这样操作**
+
+```bash
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+```
+
 ## 同步远程主线到本地分支
 
 查看远程分支
