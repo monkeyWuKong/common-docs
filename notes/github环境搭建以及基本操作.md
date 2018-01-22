@@ -176,6 +176,27 @@ git checkout testing
 git checkout master
 ```
 
+创建分支并直接切换
+
+```
+git checkout -b iss53
+//相当于如下2条命令
+$ git branch iss53
+$ git checkout iss53
+```
+
+合并分支到master
+```
+git checkout master
+git merge iss53
+```
+
+删除分支
+
+`git branch -d hotfix`
+
+
+
 ## 查看历史
 
 ```
