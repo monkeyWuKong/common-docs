@@ -165,6 +165,10 @@ git remote rm paul
 
 ## 分支操作
 
+查看分支
+
+`git branch -v`
+
 创建分支
 
 `git branch testing`
