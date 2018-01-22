@@ -108,29 +108,60 @@ $ git add forgotten_file
 $ git commit --amend
 ```
 
-## 同步远程主线到本地分支
+**取消暂存的文件**
 
-查看远程分支
+```
+git reset HEAD CONTRIBUTING.md
+```
+
+**还原已经修改过的文件**
+
+前提不在暂存区中
+
+`git checkout -- CONTRIBUTING.md`
+
+## 远程仓库
+
+origin - 这是 Git 给你克隆的仓库服务器的默认名字。
+
+查看远程仓库
 
 `git remote -v`
 
-添加远程分支
+查看某个远程仓库
+
+`git remote show [remote-name]`
+
+添加远程仓库
 
 `git remote add remmote-name http://gitlab.jkl/xyz/abc.git`
 
 remote-name可以自定义
 
-拉取远程分支
+拉取远程仓库
 
 `git fetch remmote-name`
 
 同步代码
 
-` git merge remmote-name/master`
+`git merge remmote-name/master`
 
-提交
+推送到远程仓库
 
-`git push`
+`git push [remote-name] [branch-name]`
+
+*将 master 分支推送到 origin 服务器*
+
+`git push origin master`
+
+其它
+
+```
+//重命名
+git remote rename pb paul
+//移除
+git remote rm paul
+```
 
 ## 分支操作
 
