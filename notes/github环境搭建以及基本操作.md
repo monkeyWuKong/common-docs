@@ -92,6 +92,10 @@ $ git rm README.md
 $ git add README
 ```
 
+**库上删除本地保留**
+
+`git rm --cached README`
+
 >以前只是了解，现在真正用的时候发现，git易用性真的不如svn，工具就是应该简单，不应该在工具上花太多时间。
 
 ## 同步远程主线到本地分支
