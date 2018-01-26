@@ -116,7 +116,7 @@ $ git commit --amend
 git reset HEAD CONTRIBUTING.md
 ```
 
-**取消commit**
+**取消commit或者add**
 
 首先`git log`查询上一次的uuid
 
