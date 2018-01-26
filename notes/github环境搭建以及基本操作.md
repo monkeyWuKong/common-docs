@@ -110,9 +110,17 @@ $ git commit --amend
 
 **取消暂存的文件**
 
+`git add`之后取消add使用下面的命令
+
 ```
 git reset HEAD CONTRIBUTING.md
 ```
+
+**取消commit**
+
+首先`git log`查询上一次的uuid
+
+然后`git reset –-mixed uuid`撤销本地commit。不要用`git commit --hard`,会还原本地已经修改过的文件。
 
 **还原已经修改过的文件**
 
