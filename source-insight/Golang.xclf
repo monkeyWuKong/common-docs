@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceInsightConfiguration
+	AppVer="4.00.0089"
+	AppVerMinReader="4.00.0032"
+	>
+	<!-- This is a Source Insight configuration file. -->
+	<!-- www.sourceinsight.com -->
+
+	<Languages>
+		<Language
+			Name="Golang"
+			Comment=""
+			CaseSensitive="0"
+			CPreprocessor="0"
+			SmartIndent="0"
+			ContainsSourceCode="1"
+			SyntaxFormatting="1"
+			UseRegexParsing="1"
+			SyntaxDecorations="0"
+			CommentStyles="0"
+			AllowSmartTab="1"
+			DetectNumbers="1"
+			CHexNum="0"
+			IntelHexNum="0"
+			MotorolaHexNum="0"
+			BasicHexNum="0"
+			IntelOctalNum="0"
+			QOctalNum="0"
+			NonAlphaNumIdentChars="_"
+			>
+			<CustomParsing>
+				<Expression
+					SymbolType="Function"
+					Pattern="^func\w+\([a-zA-Z][a-zA-Z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Member Function"
+					Pattern="^func\w+(.*)\w+\([a-zA-Z][a-zA-Z0-9_]+\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Structure"
+					Pattern="^type\w+\([a-zA-Z0-9_]+\)\w+struct"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Custom Tag"
+					Pattern="`json:&quot;\([a-zA-Z0-9_]+\)&quot;`"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Variable"
+					Pattern="\w*var\w+\([A-Za-z_][A-Za-z0-9_]*\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Variable"
+					Pattern="\w+\([A-Za-z_][A-Za-z0-9_]*\)\w+:="
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Data Member"
+					Pattern="\w+\([A-Za-z_][A-Za-z0-9_]*\)\w+\**\([\[\]]*[A-Za-z_][A-Za-z0-9_]*\)"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Interface"
+					Pattern="^type\w+\([a-zA-Z][a-zA-Z0-9]*\)\w+interface"
+					RegexType="Source Insight"
+					/>
+				<Expression
+					SymbolType="Function Prototype"
+					Pattern="type\w+\([a-zA-Z][a-zA-Z0-9]*\)\w+func("
+					RegexType="Source Insight"
+					/>
+			</CustomParsing>
+			<Ranges>
+				<Range
+					Type="Line"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Single Line"
+					StyleDelimiter="1"
+					StartString="//"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="Comment Multi Line"
+					StyleDelimiter="1"
+					StartString="/*"
+					EndString="*/"
+					EscapeString=""
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&quot;"
+					EndString="&quot;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="&apos;"
+					EndString="&apos;"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+				<Range
+					Type="Multiline"
+					AllowNesting="0"
+					ParseInside="0"
+					ReadOnly="0"
+					StyleName="String"
+					StyleDelimiter="1"
+					StartString="`"
+					EndString="`"
+					EscapeString="\"
+					ValidateColumns="0"
+					FirstColumn="0"
+					LastColumn="0"
+					/>
+			</Ranges>
+			<Keywords>
+				<Item Keyword="!" Style="Operator" />
+				<Item Keyword="!=" Style="Operator" />
+				<Item Keyword="%" Style="Operator" />
+				<Item Keyword="%=" Style="Operator" />
+				<Item Keyword="&amp;" Style="Operator" />
+				<Item Keyword="&amp;&amp;" Style="Operator" />
+				<Item Keyword="&amp;=" Style="Operator" />
+				<Item Keyword="&amp;^" Style="Operator" />
+				<Item Keyword="&amp;^=" Style="Operator" />
+				<Item Keyword="(" Style="Delimiter" />
+				<Item Keyword=")" Style="Delimiter" />
+				<Item Keyword="*" Style="Operator" />
+				<Item Keyword="*=" Style="Operator" />
+				<Item Keyword="+" Style="Operator" />
+				<Item Keyword="++" Style="Operator" />
+				<Item Keyword="+=" Style="Operator" />
+				<Item Keyword="," Style="Delimiter" />
+				<Item Keyword="-" Style="Operator" />
+				<Item Keyword="--" Style="Operator" />
+				<Item Keyword="-=" Style="Operator" />
+				<Item Keyword="." Style="Operator" />
+				<Item Keyword="..." Style="Operator" />
+				<Item Keyword="/" Style="Operator" />
+				<Item Keyword="/=" Style="Operator" />
+				<Item Keyword=":" Style="Delimiter" />
+				<Item Keyword=":=" Style="Operator" />
+				<Item Keyword=";" Style="Delimiter" />
+				<Item Keyword="&lt;" Style="Operator" />
+				<Item Keyword="&lt;-" Style="Operator" />
+				<Item Keyword="&lt;&lt;" Style="Operator" />
+				<Item Keyword="&lt;&lt;=" Style="Operator" />
+				<Item Keyword="&lt;=" Style="Operator" />
+				<Item Keyword="=" Style="Operator" />
+				<Item Keyword="==" Style="Operator" />
+				<Item Keyword="&gt;" Style="Operator" />
+				<Item Keyword="&gt;=" Style="Operator" />
+				<Item Keyword="&gt;&gt;" Style="Operator" />
+				<Item Keyword="&gt;&gt;=" Style="Operator" />
+				<Item Keyword="append" Style="Default Text" />
+				<Item Keyword="bool" Style="Keyword" />
+				<Item Keyword="break" Style="Control" />
+				<Item Keyword="byte" Style="Keyword" />
+				<Item Keyword="cap" Style="Default Text" />
+				<Item Keyword="case" Style="Control" />
+				<Item Keyword="chan" Style="Keyword" />
+				<Item Keyword="close" Style="Default Text" />
+				<Item Keyword="complex" Style="Default Text" />
+				<Item Keyword="complex128" Style="Keyword" />
+				<Item Keyword="complex64" Style="Keyword" />
+				<Item Keyword="const" Style="Keyword" />
+				<Item Keyword="continue" Style="Control" />
+				<Item Keyword="copy" Style="Default Text" />
+				<Item Keyword="default" Style="Control" />
+				<Item Keyword="defer" Style="Control" />
+				<Item Keyword="delete" Style="Default Text" />
+				<Item Keyword="else" Style="Control" />
+				<Item Keyword="error" Style="Keyword" />
+				<Item Keyword="fallthrough" Style="Control" />
+				<Item Keyword="false" Style="Boolean" />
+				<Item Keyword="float32" Style="Keyword" />
+				<Item Keyword="float64" Style="Keyword" />
+				<Item Keyword="for" Style="Control" />
+				<Item Keyword="func" Style="Keyword" />
+				<Item Keyword="go" Style="Control" />
+				<Item Keyword="goto" Style="Control" />
+				<Item Keyword="if" Style="Control" />
+				<Item Keyword="imag" Style="Default Text" />
+				<Item Keyword="import" Style="Declare Union" />
+				<Item Keyword="int" Style="Keyword" />
+				<Item Keyword="int16" Style="Keyword" />
+				<Item Keyword="int32" Style="Keyword" />
+				<Item Keyword="int64" Style="Keyword" />
+				<Item Keyword="int8" Style="Keyword" />
+				<Item Keyword="interface" Style="Keyword" />
+				<Item Keyword="iota" Style="Boolean" />
+				<Item Keyword="len" Style="Keyword" />
+				<Item Keyword="make" Style="Keyword" />
+				<Item Keyword="map" Style="Keyword" />
+				<Item Keyword="new" Style="Keyword" />
+				<Item Keyword="nil" Style="Null Value" />
+				<Item Keyword="package" Style="Declare Union" />
+				<Item Keyword="panic" Style="Default Text" />
+				<Item Keyword="print" Style="Default Text" />
+				<Item Keyword="println" Style="Default Text" />
+				<Item Keyword="range" Style="Control" />
+				<Item Keyword="real" Style="Default Text" />
+				<Item Keyword="recover" Style="Default Text" />
+				<Item Keyword="return" Style="Control" />
+				<Item Keyword="select" Style="Control" />
+				<Item Keyword="string" Style="Keyword" />
+				<Item Keyword="struct" Style="Keyword" />
+				<Item Keyword="switch" Style="Control" />
+				<Item Keyword="true" Style="Boolean" />
+				<Item Keyword="type" Style="Keyword" />
+				<Item Keyword="uint" Style="Keyword" />
+				<Item Keyword="uint16" Style="Keyword" />
+				<Item Keyword="uint32" Style="Keyword" />
+				<Item Keyword="uint64" Style="Keyword" />
+				<Item Keyword="uint8" Style="Keyword" />
+				<Item Keyword="var" Style="Declare Union" />
+				<Item Keyword="[" Style="Delimiter" />
+				<Item Keyword="{" Style="Delimiter" />
+				<Item Keyword="|" Style="Operator" />
+				<Item Keyword="|=" Style="Operator" />
+				<Item Keyword="||" Style="Operator" />
+				<Item Keyword="]" Style="Delimiter" />
+				<Item Keyword="}" Style="Delimiter" />
+				<Item Keyword="^" Style="Operator" />
+				<Item Keyword="^=" Style="Operator" />
+				<Item Keyword="`" Style="Delimiter" />
+			</Keywords>
+		</Language>
+	</Languages>
+</SourceInsightConfiguration>
