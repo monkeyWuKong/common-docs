@@ -235,3 +235,10 @@ git checkout B
 git checkout --patch A filename
 ```
 
+#### 拉新分支
+
+```
+git branch new_branch
+git checkout new_branch
+git push --set-upstream origin new_branch
+```
