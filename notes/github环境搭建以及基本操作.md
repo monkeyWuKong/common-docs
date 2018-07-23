@@ -223,3 +223,15 @@ git log --oneline --decorate --graph --all
 
 `git log -p -2`
 
+## 操作
+
+#### merge指定文件
+
+merge的时候不想全部merge，只想merge部分文件:
+
+```
+//从A merge到 B
+git checkout B
+git checkout --patch A filename
+```
+
